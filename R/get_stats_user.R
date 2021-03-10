@@ -25,15 +25,14 @@
 get_stats_user <- function(api_key,user_key)
 {
   # SUPORT DATA FRAME WITH
-  #suport <- readRDS("data/suport.rds")
+  #suport <- readRDS("data/suport.rds")#
 
   # COLLECT THE PROFILE BY USER NAME OR BY USER ID
   # it will depend on the type of user_key
   if(is.na(as.numeric(user_key)))
   {
     user_id <- as.character(as.vector(csgo_api_profile_by_name(api_key,user_key)))
-  } else
-  {
+  } else{
     user_id <- as.character(user_key)
   }
 
@@ -41,7 +40,6 @@ get_stats_user <- function(api_key,user_key)
   stats <- csgo_api_stats(api_key,user_id)
 
   profile_name <- csgo_api_profile(api_key,user_id)$personaname
-
 
   # INCLUDING LABELS AND CATEGORIES
   stats <- fuzzyjoin::fuzzy_left_join(

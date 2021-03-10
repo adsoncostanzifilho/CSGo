@@ -34,8 +34,7 @@ csgo_api_profile <- function(key, user_id, name = FALSE)
       key,
       user_id
     )
-  }
-  else{
+  }else{
     # Profile by user_id
     call_cs_profile <- sprintf(
       'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?&key=%s&steamids=%s',

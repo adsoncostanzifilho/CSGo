@@ -33,10 +33,8 @@ get_stats_friends <- function(api_key, user_key)
   # it will depend on the type of user_key
   if(is.na(as.numeric(user_key)))
   {
-    user_id <- as.character(as.vector(csgo_api_profile_by_name(api_key,user_key)))
-  }
-  else
-  {
+    user_id <- as.character(as.vector(csgo_api_profile_by_name(api_key, user_key)))
+  }else{
     user_id <- as.character(user_key)
   }
 
@@ -99,9 +97,7 @@ get_stats_friends <- function(api_key, user_key)
 
     return_list$friends_stats <- db_friends_complete
     return_list$friends <- friend_list
-  }
-  else
-  {
+  }else{
     return_list$friends_stats <- 'NO PUBLIC FRIENDS'
     return_list$friends <- friend_list
   }

@@ -33,12 +33,10 @@ csgo_api_stats <- function(key, user_id)
 
   api_content_stats <- httr::content(api_query_stats, 'text')
 
-  if(str_detect(api_content_stats, 'Internal Server Error'))
+  if(stringr::str_detect(api_content_stats, 'Internal Server Error'))
   {
     db_stats <- data.frame(name = NA, value = NA)
-  }
-  else
-  {
+  }else{
     json_content_stats <- jsonlite::fromJSON(api_content_stats, flatten = TRUE)
 
     db_stats <- as.data.frame(json_content_stats$playerstats$stats)
