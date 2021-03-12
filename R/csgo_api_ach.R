@@ -8,7 +8,7 @@
 #'
 #' @param user_id string with the steam user ID.
 #'
-#' #' Steam ID is the NUMBER OR NAME at the end of your steam profile URL. ex: '76561198263364899'.
+#' Steam ID is the NUMBER OR NAME at the end of your steam profile URL. ex: '76561198263364899'.
 #'
 #' PS: The user should have a public status.
 #'
@@ -17,9 +17,12 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "api_key" parameter to run the example.
+#'
+#' \dontrun{
+#' ## It is necessary to fill the "api_key" parameter to run the example
 #'
 #' df_ach <- csgo_api_ach(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+#' }
 csgo_api_ach <- function(api_key, user_id)
 {
 
