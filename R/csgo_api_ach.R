@@ -17,7 +17,6 @@
 #' @export
 #'
 #' @examples
-#'
 #' \dontrun{
 #' ## It is necessary to fill the "api_key" parameter to run the example
 #'

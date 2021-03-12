@@ -4,10 +4,10 @@
 \alias{get_stats_user}
 \title{Get the User Statistics}
 \usage{
-get_stats_user(api_key, user_key)
+get_stats_user(api_key, user_id)
 }
 \arguments{
-\item{key}{string with the key provided by the steam API.
+\item{api_key}{string with the key provided by the steam API.
 
 PS: If you don`t have a API key yet go to \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
 
@@ -27,7 +27,9 @@ This function will return the complete CS Go Statistics of the user_id (input).
 Similar to the csgo_api_stats function but it will return a clean data frame with category and description of each statistic.
 }
 \examples{
-It is necessary to fill the "key" parameter to run the example.
+\dontrun{
+## It is necessary to fill the "api_key" parameter to run the example
 
-df <- get_stats_user(api_key = api_key, user_key = '76561198263364899')
+df <- get_stats_user(api_key = api_key, user_id = '76561198263364899')
+}
 }

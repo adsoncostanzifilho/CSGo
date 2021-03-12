@@ -4,10 +4,10 @@
 \alias{get_stats_friends}
 \title{Get the Friends Statistics}
 \usage{
-get_stats_friends(api_key, user_key)
+get_stats_friends(api_key, user_id)
 }
 \arguments{
-\item{key}{string with the key provided by the steam API.
+\item{api_key}{string with the key provided by the steam API.
 
 PS: If you don`t have a API key yet go to \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
 
@@ -28,9 +28,11 @@ friends: data frame with all the CS Go friends of the user ID (public and non pu
 This function will return the complete CS Go Statistics for all public friends of the user_id (input).
 }
 \examples{
-It is necessary to fill the "key" parameter to run the example.
+\dontrun{
+## It is necessary to fill the "api_key" parameter to run the example
 
-fr_list <- get_stats_friends(api_key = api_key, user_key = '76561198263364899')
+fr_list <- get_stats_friends(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
 fr_list$friends_stats
 fr_list$friends
+}
 }

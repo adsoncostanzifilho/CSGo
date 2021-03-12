@@ -4,10 +4,10 @@
 \alias{csgo_api_profile}
 \title{CS Go User Profile}
 \usage{
-csgo_api_profile(key, user_id, name = FALSE)
+csgo_api_profile(api_key, user_id, name = FALSE)
 }
 \arguments{
-\item{key}{string with the key provided by the steam API.
+\item{api_key}{string with the key provided by the steam API.
 
 PS: If you don`t have a API key yet go to \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
 
@@ -26,9 +26,11 @@ data frame with all the CS Go friends of the user ID.
 This function will return the CS Go Profile of the user_id (input).
 }
 \examples{
-It is necessary to fill the "key" parameter to run the example.
+#' \dontrun{
+## It is necessary to fill the "api_key" parameter to run the example
 
-df_profile <- csgo_api_profile(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+df_profile <- csgo_api_profile(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
 
-df_profile <- csgo_api_profile(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = 'generalcapivara', name = TRUE)
+df_profile <- csgo_api_profile(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = 'generalcapivara', name = TRUE)
+}
 }

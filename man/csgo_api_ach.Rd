@@ -4,16 +4,16 @@
 \alias{csgo_api_ach}
 \title{CS Go Achievements}
 \usage{
-csgo_api_ach(key, user_id)
+csgo_api_ach(api_key, user_id)
 }
 \arguments{
-\item{key}{string with the key provided by the steam API.
+\item{api_key}{string with the key provided by the steam API.
 
-PS: If you don`t have a API key yet go to \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
+PS: If you don`t have a API key yet go to  \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
 
 \item{user_id}{string with the steam user ID.
 
-#' Steam ID is the NUMBER OR NAME at the end of your steam profile URL. ex: '76561198263364899'.
+Steam ID is the NUMBER OR NAME at the end of your steam profile URL. ex: '76561198263364899'.
 
 PS: The user should have a public status.}
 }
@@ -24,7 +24,9 @@ data frame with all the CS Go achievements of the user ID.
 This function will return all the CS Go Achievements of the user_id (input).
 }
 \examples{
-It is necessary to fill the "key" parameter to run the example.
+\dontrun{
+## It is necessary to fill the "api_key" parameter to run the example
 
-df_ach <- csgo_api_ach(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+df_ach <- csgo_api_ach(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+}
 }

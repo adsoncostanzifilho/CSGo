@@ -21,11 +21,13 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "api_key" parameter to run the example.
+#' \dontrun{
+#' ## It is necessary to fill the "api_key" parameter to run the example
 #'
-#' fr_list <- get_stats_friends(api_key = api_key, user_id = '76561198263364899')
+#' fr_list <- get_stats_friends(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
 #' fr_list$friends_stats
 #' fr_list$friends
+#' }
 get_stats_friends <- function(api_key, user_id)
 {
 

@@ -19,9 +19,11 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "key" parameter to run the example.
+#' \dontrun{
+#' ## It is necessary to fill the "api_key" parameter to run the example
 #'
 #' df <- get_stats_user(api_key = api_key, user_id = '76561198263364899')
+#' }
 get_stats_user <- function(api_key, user_id)
 {
   # SUPORT DATA FRAME WITH

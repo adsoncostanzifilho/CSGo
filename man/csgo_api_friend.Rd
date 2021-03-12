@@ -4,10 +4,10 @@
 \alias{csgo_api_friend}
 \title{CS Go Friends}
 \usage{
-csgo_api_friend(key, user_id)
+csgo_api_friend(api_key, user_id)
 }
 \arguments{
-\item{key}{string with the key provided by the steam API.
+\item{api_key}{string with the key provided by the steam API.
 
 PS: If you don`t have a API key yet go to \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
 
@@ -24,7 +24,9 @@ data frame with all the CS Go friends of the user ID.
 This function will return all the CS Go friends of the user_id (input).
 }
 \examples{
-It is necessary to fill the "key" parameter to run the example.
+#' \dontrun{
+## It is necessary to fill the "api_key" parameter to run the example
 
-df_friend <- csgo_api_friend(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+df_friend <- csgo_api_friend(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+}
 }

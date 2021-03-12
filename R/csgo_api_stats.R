@@ -16,9 +16,11 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "api_key" parameter to run the example.
+#' #' \dontrun{
+#' ## It is necessary to fill the "api_key" parameter to run the example
 #'
 #' df_stats <- csgo_api_stats(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+#' }
 csgo_api_stats <- function(api_key, user_id)
 {
   # Stats

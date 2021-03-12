@@ -18,11 +18,13 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "api_key" parameter to run the example.
+#' #' \dontrun{
+#' ## It is necessary to fill the "api_key" parameter to run the example
 #'
 #' df_profile <- csgo_api_profile(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
 #'
 #' df_profile <- csgo_api_profile(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = 'generalcapivara', name = TRUE)
+#' }
 csgo_api_profile <- function(api_key, user_id, name = FALSE)
 {
 

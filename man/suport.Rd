@@ -15,7 +15,7 @@ A data frame with 133 rows and 4 variables:
 }
 }
 \source{
-created by the author.
+Created by the author.
 }
 \usage{
 suport
