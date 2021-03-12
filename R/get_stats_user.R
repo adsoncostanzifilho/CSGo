@@ -4,7 +4,7 @@
 #'
 #' Similar to the csgo_api_stats function but it will return a clean data frame with category and description of each statistic.
 #'
-#' @param key string with the key provided by the steam API.
+#' @param api_key string with the key provided by the steam API.
 #'
 #' PS: If you don`t have a API key yet go to <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
 #'
@@ -21,19 +21,19 @@
 #' @examples
 #' It is necessary to fill the "key" parameter to run the example.
 #'
-#' df <- get_stats_user(api_key = api_key, user_key = '76561198263364899')
-get_stats_user <- function(api_key,user_key)
+#' df <- get_stats_user(api_key = api_key, user_id = '76561198263364899')
+get_stats_user <- function(api_key, user_id)
 {
   # SUPORT DATA FRAME WITH
   #suport <- readRDS("data/suport.rds")#
 
   # COLLECT THE PROFILE BY USER NAME OR BY USER ID
-  # it will depend on the type of user_key
-  if(is.na(as.numeric(user_key)))
+  # it will depend on the type of user_id
+  if(is.na(as.numeric(user_id)))
   {
-    user_id <- as.character(as.vector(csgo_api_profile(api_key, user_key, name = TRUE)))
+    user_id <- as.character(as.vector(csgo_api_profile(api_key, user_id, name = TRUE)))
   } else{
-    user_id <- as.character(user_key)
+    user_id <- as.character(user_id)
   }
 
   # COLLECT THE DATA

@@ -2,7 +2,7 @@
 #'
 #' This function will return the complete CS Go Statistics for all public friends of the user_id (input).
 #'
-#' @param key string with the key provided by the steam API.
+#' @param api_key string with the key provided by the steam API.
 #'
 #' PS: If you don`t have a API key yet go to <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
 #'
@@ -23,19 +23,19 @@
 #' @examples
 #' It is necessary to fill the "key" parameter to run the example.
 #'
-#' fr_list <- get_stats_friends(api_key = api_key, user_key = '76561198263364899')
+#' fr_list <- get_stats_friends(api_key = api_key, user_id = '76561198263364899')
 #' fr_list$friends_stats
 #' fr_list$friends
-get_stats_friends <- function(api_key, user_key)
+get_stats_friends <- function(api_key, user_id)
 {
 
   # COLLECT THE PROFILE BY USER NAME OR BY USER ID
-  # it will depend on the type of user_key
-  if(is.na(as.numeric(user_key)))
+  # it will depend on the type of user_id
+  if(is.na(as.numeric(user_id)))
   {
-    user_id <- as.character(as.vector(csgo_api_profile_by_name(api_key, user_key)))
+    user_id <- as.character(as.vector(csgo_api_profile_by_name(api_key, user_id)))
   }else{
-    user_id <- as.character(user_key)
+    user_id <- as.character(user_id)
   }
 
   # GETING THE FRIENDS IDs

@@ -2,7 +2,7 @@
 #'
 #' This function will return all the CS Go Statistics of the user_id (input).
 #'
-#' @param key string with the key provided by the steam API.
+#' @param api_key string with the key provided by the steam API.
 #'
 #' PS: If you don`t have a API key yet go to <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
 #'
@@ -16,15 +16,15 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "key" parameter to run the example.
+#' It is necessary to fill the "api_key" parameter to run the example.
 #'
-#' df_stats <- csgo_api_stats(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
-csgo_api_stats <- function(key, user_id)
+#' df_stats <- csgo_api_stats(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+csgo_api_stats <- function(api_key, user_id)
 {
   # Stats
   call_cs_stats <- sprintf(
     'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=%s&steamid=%s&apiname=%s',
-    key,
+    api_key,
     user_id,
     '1458786300'
   )

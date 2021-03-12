@@ -2,7 +2,7 @@
 #'
 #' This function will return all the CS Go Achievements of the user_id (input).
 #'
-#' @param key string with the key provided by the steam API.
+#' @param api_key string with the key provided by the steam API.
 #'
 #' PS: If you don`t have a API key yet go to  <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
 #'
@@ -17,16 +17,16 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "key" parameter to run the example.
+#' It is necessary to fill the "api_key" parameter to run the example.
 #'
-#' df_ach <- csgo_api_ach(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
-csgo_api_ach <- function(key, user_id)
+#' df_ach <- csgo_api_ach(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+csgo_api_ach <- function(api_key, user_id)
 {
 
   # Achievements
   call_cs_ach <- sprintf(
     'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=730&key=%s&steamid=%s',
-    key,
+    api_key,
     user_id
   )
 

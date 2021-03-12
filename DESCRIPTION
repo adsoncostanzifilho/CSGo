@@ -1,6 +1,6 @@
 Package: CSGo
 Title: Package to pull the CS Go data from the Steam API.
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Adson",
            family = "Costanzi",

@@ -2,7 +2,7 @@
 #'
 #' This function will return all the CS Go friends of the user_id (input).
 #'
-#' @param key string with the key provided by the steam API.
+#' @param api_key string with the key provided by the steam API.
 #'
 #' PS: If you don`t have a API key yet go to <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
 #'
@@ -16,15 +16,15 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "key" parameter to run the example.
+#' It is necessary to fill the "api_key" parameter to run the example.
 #'
-#' df_friend <- csgo_api_friend(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
-csgo_api_friend <- function(key, user_id)
+#' df_friend <- csgo_api_friend(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+csgo_api_friend <- function(api_key, user_id)
 {
   # Friends
   call_cs_friend <- sprintf(
     'http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?appid=730&relationship=friend&key=%s&steamid=%s',
-    key,
+    api_key,
     user_id
   )
 

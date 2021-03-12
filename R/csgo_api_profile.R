@@ -2,7 +2,7 @@
 #'
 #' This function will return the CS Go Profile of the user_id (input).
 #'
-#' @param key string with the key provided by the steam API.
+#' @param api_key string with the key provided by the steam API.
 #'
 #' PS: If you don`t have a API key yet go to <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
 #'
@@ -18,12 +18,12 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "key" parameter to run the example.
+#' It is necessary to fill the "api_key" parameter to run the example.
 #'
-#' df_profile <- csgo_api_profile(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+#' df_profile <- csgo_api_profile(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
 #'
-#' df_profile <- csgo_api_profile(key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = 'generalcapivara', name = TRUE)
-csgo_api_profile <- function(key, user_id, name = FALSE)
+#' df_profile <- csgo_api_profile(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = 'generalcapivara', name = TRUE)
+csgo_api_profile <- function(api_key, user_id, name = FALSE)
 {
 
   if(name)
@@ -31,14 +31,14 @@ csgo_api_profile <- function(key, user_id, name = FALSE)
     # Profile by user_name
     call_cs_profile <- sprintf(
       'http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?&key=%s&vanityurl=%s',
-      key,
+      api_key,
       user_id
     )
   }else{
     # Profile by user_id
     call_cs_profile <- sprintf(
       'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?&key=%s&steamids=%s',
-      key,
+      api_key,
       user_id
     )
   }
