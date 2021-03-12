@@ -26,15 +26,15 @@ The very first step to get your own Steam API credentials is to have an **Steam 
 
 Now that you are a Steam member, and already spend more than 5.00 USD in the store you should be able to request your own Steam API Key. Enter [here](https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey ) and sign in with your Steam Account Name and Password.
 
-<p align="center"><img src="img/sign_in.png" alt="sign_in"></p>
+<p align="center"><img src="img/sign_in.png" width="500px" alt="sign_in"></p>
 
 In the next screen you should fill your Steam Domain Name, confirm the  [Steam Api Terms of Use](https://steamcommunity.com/dev/apiterms) check box and click on the "Register" button.
 
-<p align="center"><img src="img/register_steam_api.png" alt="register"></p>
+<p align="center"><img src="img/register_steam_api.png" width="500px" alt="register"></p>
 
 If everything went well you should see an screen as bellow with your own **Steam Web API Key**.
 
-<p align="center"><img src="img/the_key.png" alt="key"></p>
+<p align="center"><img src="img/the_key.png"  width="500px" alt="key"></p>
 
 ## Key Test
 
