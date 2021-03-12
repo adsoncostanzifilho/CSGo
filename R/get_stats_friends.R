@@ -21,7 +21,7 @@
 #' @export
 #'
 #' @examples
-#' It is necessary to fill the "key" parameter to run the example.
+#' It is necessary to fill the "api_key" parameter to run the example.
 #'
 #' fr_list <- get_stats_friends(api_key = api_key, user_id = '76561198263364899')
 #' fr_list$friends_stats
@@ -33,7 +33,8 @@ get_stats_friends <- function(api_key, user_id)
   # it will depend on the type of user_id
   if(is.na(as.numeric(user_id)))
   {
-    user_id <- as.character(as.vector(csgo_api_profile_by_name(api_key, user_id)))
+    user_profile <- csgo_api_profile(api_key, user_id, name = TRUE)
+    user_id <- as.character(as.vector(user_profile$steamid))
   }else{
     user_id <- as.character(user_id)
   }

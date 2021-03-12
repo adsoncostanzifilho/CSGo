@@ -34,6 +34,22 @@ csgo_api_profile <- function(api_key, user_id, name = FALSE)
       api_key,
       user_id
     )
+
+    api_query_profile <- httr::GET(call_cs_profile)
+
+    api_content_profile <- httr::content(api_query_profile, 'text')
+
+    json_content_profile <- jsonlite::fromJSON(api_content_profile, flatten = TRUE)
+
+    user_id <- json_content_profile$response$steamid
+
+    call_cs_profile <- sprintf(
+      'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?&key=%s&steamids=%s',
+      api_key,
+      user_id
+    )
+
+
   }else{
     # Profile by user_id
     call_cs_profile <- sprintf(

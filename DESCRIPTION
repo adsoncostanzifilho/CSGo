@@ -1,12 +1,12 @@
 Package: CSGo
-Title: Package to pull the CS Go data from the Steam API.
+Title: Package to pull the CS Go data from the Steam API
 Version: 0.0.1
 Authors@R: 
     person(given = "Adson",
            family = "Costanzi",
            role = c("aut", "cre"),
            email = "adsoncostanzi32@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "0000-0002-5210-2952"))
 Description: The package provides an easy way to connect and pull data from the Steam API specifically for the Counter-Strike Global Offensive game (CS Go).
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -21,7 +21,8 @@ Imports:
   httr,
   stringr,
   jsonlite,
-  magrittr
+  magrittr,
+  dplyr
 Depends: 
     R (>= 2.10)
 Suggests: 
