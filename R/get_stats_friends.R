@@ -39,7 +39,7 @@ get_stats_friends <- function(api_key, user_key)
   }
 
   # GETING THE FRIENDS IDs
-  friend_list <- csgo_api_friend(api_key,user_id)
+  friend_list <- csgo_api_friend(api_key, user_id)
 
   # VERIFY IF THE USER IS PUBLIC OR NOT
   print("Public friends check..")
