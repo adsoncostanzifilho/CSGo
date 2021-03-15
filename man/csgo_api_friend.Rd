@@ -24,9 +24,9 @@ data frame with all the CS Go friends of the user ID.
 This function will return all the CS Go friends of the user_id (input).
 }
 \examples{
-#' \dontrun{
+\dontrun{
 ## It is necessary to fill the "api_key" parameter to run the example
 
-df_friend <- csgo_api_friend(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+df_friend <- csgo_api_friend(api_key = 'XXX', user_id = '76561198263364899')
 }
 }

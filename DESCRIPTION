@@ -1,5 +1,5 @@
 Package: CSGo
-Title: Package to pull the CS Go data from the Steam API
+Title: Collecting Counter Strike Global Offensive Data
 Version: 0.0.1
 Authors@R: 
     person(given = "Adson",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "adsoncostanzi32@gmail.com",
            comment = c(ORCID = "0000-0002-5210-2952"))
-Description: The package provides an easy way to connect and pull data from the Steam API specifically for the Counter-Strike Global Offensive game (CS Go).
+Description: An implementation of calls designed to collect and organize in an easy way the data from the Steam API specifically for the Counter-Strike Global Offensive Game (CS Go).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

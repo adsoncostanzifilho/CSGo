@@ -27,6 +27,6 @@ This function will return all the CS Go Achievements of the user_id (input).
 \dontrun{
 ## It is necessary to fill the "api_key" parameter to run the example
 
-df_ach <- csgo_api_ach(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+df_ach <- csgo_api_ach(api_key = 'XXX', user_id = '76561198263364899')
 }
 }

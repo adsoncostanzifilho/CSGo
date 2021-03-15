@@ -24,7 +24,7 @@
 #' \dontrun{
 #' ## It is necessary to fill the "api_key" parameter to run the example
 #'
-#' fr_list <- get_stats_friends(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+#' fr_list <- get_stats_friends(api_key = 'XXX', user_id = '76561198263364899')
 #' fr_list$friends_stats
 #' fr_list$friends
 #' }

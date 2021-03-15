@@ -24,9 +24,9 @@ data frame with all the CS Go statistics of the user ID.
 This function will return all the CS Go Statistics of the user_id (input).
 }
 \examples{
-#' \dontrun{
+\dontrun{
 ## It is necessary to fill the "api_key" parameter to run the example
 
-df_stats <- csgo_api_stats(api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', user_id = '76561198263364899')
+df_stats <- csgo_api_stats(api_key = 'XXX', user_id = '76561198263364899')
 }
 }

@@ -30,6 +30,6 @@ Similar to the csgo_api_stats function but it will return a clean data frame wit
 \dontrun{
 ## It is necessary to fill the "api_key" parameter to run the example
 
-df <- get_stats_user(api_key = api_key, user_id = '76561198263364899')
+df <- get_stats_user(api_key = 'XXX', user_id = '76561198263364899')
 }
 }
