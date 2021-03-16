@@ -58,7 +58,7 @@ get_stats_friends <- function(api_key, user_id)
       avatarfull = NA
     )
 
-    temp <- csgo_api_profile(api_key,steamid)
+    temp <- csgo_api_profile(api_key, steamid)
 
     if(("communityvisibilitystate" %in% colnames(temp)))
     {
