@@ -6,6 +6,11 @@
 <br>
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/CSGo)](https://CRAN.R-project.org/package=CSGo)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 R client for accessing Steam’s REST API specifically for the
@@ -27,9 +32,15 @@ Terms of Use](https://steamcommunity.com/dev/apiterms).
 
 ## Installation
 
-The `CSGo` package still doesn’t have released on CRAN, but you can use
-the development version from
-[GitHub](https://github.com/adsoncostanzifilho/CSGo) with:
+To get the current released version from
+[CRAN](https://cran.r-project.org/web/packages/CSGo/index.html):
+
+``` r
+install.packages("CSGo")
+```
+
+To get the current development version from
+[GitHub](https://github.com/adsoncostanzifilho/CSGo):
 
 ``` r
 # install.packages("devtools")
