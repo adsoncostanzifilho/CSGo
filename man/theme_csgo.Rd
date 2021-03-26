@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_csgo.R
 \name{theme_csgo}
 \alias{theme_csgo}
-\title{CSGo \code{ggplot2} theme}
+\title{CSGo theme}
 \usage{
 theme_csgo(...)
 }
@@ -13,12 +13,13 @@ theme_csgo(...)
 \code{theme} object
 }
 \description{
-CSGo \code{ggplot2} theme
+A CSGo theme to be used with \code{ggplot2}
 }
 \examples{
 \dontrun{
 library(CSGo)
 library(ggplot2)
+library(dplyr)
 library(showtext)
 
 ## Loading Google fonts (https://fonts.google.com/)

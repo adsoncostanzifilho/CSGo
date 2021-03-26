@@ -1,4 +1,6 @@
-#' CSGo \code{ggplot2} theme
+#' CSGo theme
+#'
+#' A CSGo theme to be used with \code{ggplot2}
 #'
 #' @param ... all available options of the \code{theme} function from \code{ggplot2}
 #'
@@ -9,6 +11,7 @@
 #' \dontrun{
 #' library(CSGo)
 #' library(ggplot2)
+#' library(dplyr)
 #' library(showtext)
 #'
 #' ## Loading Google fonts (https://fonts.google.com/)

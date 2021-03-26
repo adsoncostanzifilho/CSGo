@@ -1,5 +1,7 @@
 #' CSGo color palette - color
 #'
+#' A color palette (color) to be used with \code{ggplot2}
+#'
 #' @param discrete logical: if TRUE it will generate a discrete pallet otherwise a continuous palette
 #' @param ... all available options of the \code{discrete_scale} function or \code{scale_color_gradientn} both from \code{ggplot2}
 #'
@@ -10,6 +12,7 @@
 #' \dontrun{
 #' library(CSGo)
 #' library(ggplot2)
+#' library(dplyr)
 #' library(showtext)
 #'
 #' ## Loading Google fonts (https://fonts.google.com/)

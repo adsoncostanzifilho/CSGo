@@ -9,7 +9,7 @@ csgo_api_stats(api_key, user_id)
 \arguments{
 \item{api_key}{string with the key provided by the steam API.
 
-PS: If you don`t have a API key yet go to \url{https://steamcommunity.com/login/home/?goto=\%2Fdev\%2Fapikey} and follow the presented steps.}
+PS: If you don`t have a API key yet run \code{vignette("auth", package = "CSGo")} and follow the presented steps.}
 
 \item{user_id}{string with the steam user ID.
 

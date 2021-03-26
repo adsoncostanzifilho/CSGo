@@ -6,7 +6,7 @@
 #'
 #' @param api_key string with the key provided by the steam API.
 #'
-#' PS: If you don`t have a API key yet go to <https://steamcommunity.com/login/home/?goto=%2Fdev%2Fapikey> and follow the presented steps.
+#' PS: If you don`t have a API key yet run \code{vignette("auth", package = "CSGo")} and follow the presented steps.
 #'
 #' @param user_id string with the steam user ID.
 #'

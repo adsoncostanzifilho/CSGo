@@ -15,12 +15,13 @@ scale_fill_csgo(discrete = TRUE, ...)
 \code{scale_color} object
 }
 \description{
-CSGo color palette - fill
+A color palette (fill) to be used with \code{ggplot2}
 }
 \examples{
 \dontrun{
 library(CSGo)
 library(ggplot2)
+library(dplyr)
 library(showtext)
 
 ## Loading Google fonts (https://fonts.google.com/)
