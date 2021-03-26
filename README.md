@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# CSGo <img src="man/img/logo.png" width="120px" align="right" />
+# CSGo <img src="vignettes/img/logo.png" width="120px" align="right" />
 
 <br>
 
