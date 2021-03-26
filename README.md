@@ -33,7 +33,7 @@ Terms of Use](https://steamcommunity.com/dev/apiterms).
 ## Installation
 
 To get the current released version from
-[CRAN](https://cran.r-project.org/web/packages/CSGo/index.html):
+[CRAN](https://CRAN.R-project.org/package=CSGo):
 
 ``` r
 install.packages("CSGo")
@@ -53,8 +53,7 @@ The first step to use the `CSGo` package is to have your own credentials
 (API key) to pull the CSGo data from the Steam API.
 
 For more information about how to get your own API Key run in your R
-`vignette("auth", package = "CSGo")`, or click
-[here](https://cran.r-project.org/web/packages/CSGo/vignettes/auth.html).
+`vignette("auth", package = "CSGo")`.
 
 Now that you already have your API Key you should be able to collect
 your own CSGo data as well as your friends’ data.
@@ -69,6 +68,5 @@ my_stats <- get_stats_user(api_key = 'your_key', user_id = '76561198263364899')
 friends_stats <- get_stats_friends(api_key = 'your_key', user_id = '76561198263364899')
 ```
 
-*PS*: Take a look at the `vignette("usecase", package = "CSGo")`
-([here](https://cran.r-project.org/web/packages/CSGo/vignettes/usecase.html))
-to get some ideas.
+*PS*: Take a look at the `vignette("usecase", package = "CSGo")` to get
+some ideas.
