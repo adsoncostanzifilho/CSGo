@@ -2,11 +2,19 @@ Package: CSGo
 Title: Collecting Counter Strike Global Offensive Data
 Version: 0.5.1
 Authors@R: 
-    person(given = "Adson",
-           family = "Costanzi",
-           role = c("aut", "cre"),
-           email = "adsoncostanzi32@gmail.com",
-           comment = c(ORCID = "0000-0002-5210-2952"))
+    c(
+        person(
+            given = "Adson",
+            family = "Costanzi",
+            role = c("aut", "cre"),
+            email = "adsoncostanzi32@gmail.com",
+            comment = c(ORCID = "0000-0002-5210-2952")),
+        person(
+            given = "Rodrigo",
+            family = "Fontoura",
+            role = c("aut"),
+            email = "rodrigo493@hotmail.com",
+            comment = c(ORCID = "0000-0002-8156-3424")))
 Description: An implementation of calls designed to collect and organize in an easy way the data from the Steam API specifically for the Counter-Strike Global Offensive Game (CS Go) <https://developer.valvesoftware.com/wiki/Steam_Web_API>.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -16,13 +24,15 @@ RoxygenNote: 7.1.1
 URL: https://github.com/adsoncostanzifilho/CSGo
 BugReports: https://github.com/adsoncostanzifilho/CSGo/issues
 Imports:
-  fuzzyjoin,
-  purrr,
-  httr,
-  stringr,
-  jsonlite,
-  magrittr,
-  dplyr
+    fuzzyjoin,
+    purrr,
+    httr,
+    stringr,
+    jsonlite,
+    magrittr,
+    dplyr,
+    extrafont,
+    ggplot2
 Depends: 
     R (>= 2.10)
 Suggests: 

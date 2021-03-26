@@ -53,7 +53,8 @@ The first step to use the `CSGo` package is to have your own credentials
 (API key) to pull the CSGo data from the Steam API.
 
 For more information about how to get your own API Key run in your R
-`vignette("auth", package = "CSGo")`.
+`vignette("auth", package = "CSGo")`, or click
+[here](https://cran.r-project.org/web/packages/CSGo/vignettes/auth.html).
 
 Now that you already have your API Key you should be able to collect
 your own CSGo data as well as your friends’ data.
@@ -62,10 +63,10 @@ your own CSGo data as well as your friends’ data.
 library(CSGo)
 
 # to get my own statistics
-my_stats <- get_stats_user(api_key = 'your_key',user_key = '76561198263364899')
+my_stats <- get_stats_user(api_key = 'your_key', user_id = '76561198263364899')
 
-# to get my the statistics of all my "public" friends
-friends_stats <- get_stats_friends(api_key = 'your_key',user_key = '76561198263364899')
+# to get the statistics of all my "public" friends
+friends_stats <- get_stats_friends(api_key = 'your_key', user_id = '76561198263364899')
 ```
 
 *PS*: Don’t worry, the function `get_stats_friends` will only collect
