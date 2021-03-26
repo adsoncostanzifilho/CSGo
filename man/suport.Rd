@@ -7,7 +7,7 @@
 \format{
 A data frame with 133 rows and 4 variables:
 \describe{
-\item{name_match}{Name to match with the name statitics data.}
+\item{name_match}{Name to match with the name statistics data.}
 \item{category}{Category name of the statistic.}
 \item{desc}{Statistic description.}
 \item{type}{Statistic type.}
