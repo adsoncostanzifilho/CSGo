@@ -69,5 +69,6 @@ my_stats <- get_stats_user(api_key = 'your_key', user_id = '76561198263364899')
 friends_stats <- get_stats_friends(api_key = 'your_key', user_id = '76561198263364899')
 ```
 
-*PS*: Don’t worry, the function `get_stats_friends` will only collect
-the data of your friends with “Public” status.
+*PS*: Take a look at the `vignette("usecase", package = "CSGo")`
+([here](https://cran.r-project.org/web/packages/CSGo/vignettes/usecase.html))
+to get some ideas.
