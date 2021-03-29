@@ -1,0 +1,52 @@
+/* FONT */
+@font-face {
+  font-family:"Quantico";
+  src: url("Quantico-Regular.ttf") format("truetype");
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quantico','Changa','Noto Sans',sans-serif;
+    color: #232a30;
+}
+
+body {
+  font-family: 'Quantico','Changa','Noto Sans',sans-serif;
+}
+
+
+/* HEADER */
+.navbar-default {
+    background-color: #313132;
+    border-color: #313132;
+}
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #313132;
+    background-color: #cc810d;
+}
+
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus {
+    color: #cc810d;
+}
+
+
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #cc810d;
+    white-space: nowrap;
+}
+
+.navbar-default .navbar-link, .navbar-default .navbar-link:hover, .navbar-default .navbar-link:active, .navbar-default .navbar-link:focus {
+    color: #cc810d;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    color: #313132;
+    background-color: #cc810d;
+}
