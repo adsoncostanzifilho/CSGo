@@ -44,7 +44,7 @@ Try to run it filling your own API key:
 ```{r example1, eval=FALSE}
 library(CSGo)
 
-df <- csgo_api_profile(key = 'your_key', user_id = '76561198263364899')
+df <- csgo_api_profile(api_key = 'your_key', user_id = '76561198263364899')
 
 ```
 
@@ -63,8 +63,8 @@ If the Steam Profile URL is https://steamcommunity.com/id/generalcapivara/ the u
 ```{r example2, eval=FALSE}
 library(CSGo)
 
-df1 <- csgo_api_profile(key = 'your_key', user_id = '76561198263364899')
-df2 <- csgo_api_profile(key = 'your_key', user_id = 'generalcapivara', name = TRUE)
+df1 <- csgo_api_profile(api_key = 'your_key', user_id = '76561198263364899')
+df2 <- csgo_api_profile(api_key = 'your_key', user_id = 'generalcapivara', name = TRUE)
 
 ```
 
