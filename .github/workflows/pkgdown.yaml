@@ -36,6 +36,7 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           install.packages("pkgdown", type = "binary")
+          install.packages("devtools", type = "binary")
         shell: Rscript {0}
 
       - name: Install package
@@ -43,4 +44,6 @@ jobs:
 
       - name: Deploy package
         run: |
-          Rscript -e 'pkgdown::build_site()'
+          devtools::document()
+          pkgdown::build_site()
+        shell: Rscript {0}
