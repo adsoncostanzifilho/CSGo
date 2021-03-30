@@ -68,6 +68,6 @@ df2 <- csgo_api_profile(api_key = 'your_key', user_id = 'generalcapivara', name 
 
 ```
 
-That's it!!!
+That's it!!!!
 
 
