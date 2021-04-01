@@ -92,7 +92,7 @@ get_stats_friends <- function(api_key, user_id)
     db_friends_complete <- purrr::map2_df(
       .x = api_key,
       .y = as.character(friend_list2$steamid),
-      .f = get_stats_user
+      .f = purrr::possibly(get_stats_user,"Cant retrieve data")
     )
 
     db_friends_complete <- db_friends_complete %>%
