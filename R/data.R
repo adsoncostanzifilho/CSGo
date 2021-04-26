@@ -11,4 +11,33 @@
 #'   ...
 #' }
 #' @source Created by the author.
-"suport"
+"support"
+
+
+
+#' Maps Images
+#'
+#' A dataset containing the pictures of each map.
+#'
+#' @format A data frame with 34 rows and 2 variables:
+#' \describe{
+#'   \item{map_name}{Name of the map.}
+#'   \item{map_photo}{The image address.}
+#'   ...
+#' }
+#' @source Created by the author.
+"map_pictures"
+
+
+#' Weapon Images
+#'
+#' A dataset containing the pictures of each map.
+#'
+#' @format A data frame with 34 rows and 2 variables:
+#' \describe{
+#'   \item{weapon_name}{Name of the weapon.}
+#'   \item{weapon_photo}{The image address.}
+#'   ...
+#' }
+#' @source Created by the author.
+"weapon_pictures"

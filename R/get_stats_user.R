@@ -26,9 +26,6 @@
 #' }
 get_stats_user <- function(api_key, user_id)
 {
-  # SUPORT DATA FRAME WITH
-  #suport <- readRDS("data/suport.rds")#
-
   # COLLECT THE PROFILE BY USER NAME OR BY USER ID
   # it will depend on the type of user_id
   if(is.na(as.numeric(user_id)))
@@ -46,12 +43,19 @@ get_stats_user <- function(api_key, user_id)
   # INCLUDING LABELS AND CATEGORIES
   stats <- fuzzyjoin::fuzzy_left_join(
     stats,
-    suport,
+    support,
     by = c('name' = 'name_match'),
     match_fun = stringr::str_detect)
 
+  # REMOVE DUPLICATES
+  aux <- stats %>%
+    dplyr::filter(type == 'maps', name_match == 'dust2')
+
   stats <- stats %>%
+    dplyr::anti_join(aux, by = c("value"="value")) %>%
+    dplyr::bind_rows(aux) %>%
     dplyr::mutate(player_name = profile_name)
+
 
   # RETURN
   return(stats)

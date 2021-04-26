@@ -1,1 +1,1 @@
-utils::globalVariables(c('public','suport','value'))
+utils::globalVariables(c('public','support','value'))
