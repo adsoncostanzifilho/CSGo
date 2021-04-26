@@ -30,7 +30,7 @@ get_stats_user <- function(api_key, user_id)
   # it will depend on the type of user_id
   if(is.na(as.numeric(user_id)))
   {
-    user_id <- as.character(as.vector(csgo_api_profile(api_key, user_id, name = TRUE)))
+    user_id <- as.character(as.vector(csgo_api_profile(api_key, user_id, name = TRUE)))[1]
   } else{
     user_id <- as.character(user_id)
   }
