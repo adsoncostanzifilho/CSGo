@@ -31,6 +31,9 @@ This function will return the complete CS Go Statistics for all public friends o
 \dontrun{
 ## It is necessary to fill the "api_key" parameter to run the example
 
+# set the "plan" to collect the data in parallel
+future::plan(future::multisession, workers = 10)
+
 fr_list <- get_stats_friends(api_key = 'XXX', user_id = '76561198263364899')
 fr_list$friends_stats
 fr_list$friends

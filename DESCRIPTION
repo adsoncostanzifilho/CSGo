@@ -32,7 +32,9 @@ Imports:
     magrittr,
     dplyr,
     extrafont,
-    ggplot2
+    ggplot2,
+    future,
+    furrr
 Depends: 
     R (>= 2.10)
 Suggests: 

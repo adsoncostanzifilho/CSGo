@@ -24,6 +24,9 @@
 #' \dontrun{
 #' ## It is necessary to fill the "api_key" parameter to run the example
 #'
+#' # set the "plan" to collect the data in parallel
+#' future::plan(future::multisession, workers = 10)
+#'
 #' fr_list <- get_stats_friends(api_key = 'XXX', user_id = '76561198263364899')
 #' fr_list$friends_stats
 #' fr_list$friends
@@ -78,7 +81,7 @@ get_stats_friends <- function(api_key, user_id)
     return(df_return)
   }
 
-  friend_list <- purrr::map_df(.x = friend_list$steamid, .f = check_public)
+  friend_list <- furrr::future_map_dfr(.x = friend_list$steamid, .f = check_public)
 
   friend_list2 <- friend_list %>%
     dplyr::filter(public == "Public")
@@ -89,7 +92,7 @@ get_stats_friends <- function(api_key, user_id)
 
   if(nrow(friend_list2) > 0)
   {
-    db_friends_complete <- purrr::map2_df(
+    db_friends_complete <- furrr::future_map2_dfr(
       .x = api_key,
       .y = as.character(friend_list2$steamid),
       .f = purrr::possibly(get_stats_user,"Cant retrieve data")
