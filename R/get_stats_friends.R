@@ -12,6 +12,8 @@
 #'
 #' PS: The user should have a public status.
 #'
+#' @param n_return numeric indicating the number of friends to return, to return all use n_return = "all" (the default is "all").
+#'
 #' @return a list of two data frames
 #'
 #' friends_stats: data frame with all the CS Go statistics of all public friends of the user ID.
@@ -24,14 +26,14 @@
 #' \dontrun{
 #' ## It is necessary to fill the "api_key" parameter to run the example
 #'
-#' # set the "plan" to collect the data in parallel
-#' future::plan(future::multisession, workers = 10)
+#' # set the "plan" to collect the data in parallel!!!!
+#' future::plan(future::multisession, workers = parallel::detectCores())
 #'
 #' fr_list <- get_stats_friends(api_key = 'XXX', user_id = '76561198263364899')
 #' fr_list$friends_stats
 #' fr_list$friends
 #' }
-get_stats_friends <- function(api_key, user_id)
+get_stats_friends <- function(api_key, user_id, n_return = 'all')
 {
 
   # COLLECT THE PROFILE BY USER NAME OR BY USER ID
@@ -45,7 +47,15 @@ get_stats_friends <- function(api_key, user_id)
   }
 
   # GETING THE FRIENDS IDs
-  friend_list <- csgo_api_friend(api_key, user_id)
+  if(is.numeric(n_return))
+  {
+    friend_list <- csgo_api_friend(api_key, user_id) %>%
+      dplyr::top_n(n = n_return, wt = dplyr::desc(friend_since))
+  }else{
+    friend_list <- csgo_api_friend(api_key, user_id)
+  }
+
+
 
   # VERIFY IF THE USER IS PUBLIC OR NOT
   print("Public friends check..")

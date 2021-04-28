@@ -12,7 +12,7 @@
 #'
 #' PS: The user should have a public status.
 #'
-#' @param name logical: if the user_id input is a name change it for TRUE. ex: 'generalcapivara'.
+#' @param name logical: if the user_id input is a name change it for TRUE. ex: 'kevinarndt'.
 #'
 #' @return data frame with all the CS Go friends of the user ID.
 #' @export
@@ -23,7 +23,7 @@
 #'
 #' df_profile <- csgo_api_profile(api_key = 'XXX', user_id = '76561198263364899')
 #'
-#' df_profile <- csgo_api_profile(api_key = 'XXX', user_id = 'generalcapivara', name = TRUE)
+#' df_profile <- csgo_api_profile(api_key = 'XXX', user_id = 'kevinarndt', name = TRUE)
 #' }
 csgo_api_profile <- function(api_key, user_id, name = FALSE)
 {

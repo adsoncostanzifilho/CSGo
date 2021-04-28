@@ -17,7 +17,7 @@ Steam ID is the NUMBER OR NAME at the end of your steam profile URL. ex: '765611
 
 PS: The user should have a public status.}
 
-\item{name}{logical: if the user_id input is a name change it for TRUE. ex: 'generalcapivara'.}
+\item{name}{logical: if the user_id input is a name change it for TRUE. ex: 'kevinarndt'.}
 }
 \value{
 data frame with all the CS Go friends of the user ID.
@@ -31,6 +31,6 @@ This function will return the CS Go Profile of the user_id (input).
 
 df_profile <- csgo_api_profile(api_key = 'XXX', user_id = '76561198263364899')
 
-df_profile <- csgo_api_profile(api_key = 'XXX', user_id = 'generalcapivara', name = TRUE)
+df_profile <- csgo_api_profile(api_key = 'XXX', user_id = 'kevinarndt', name = TRUE)
 }
 }
