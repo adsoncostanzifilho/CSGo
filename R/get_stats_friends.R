@@ -50,7 +50,7 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
   if(is.numeric(n_return))
   {
     friend_list <- csgo_api_friend(api_key, user_id) %>%
-      dplyr::top_n(n = n_return, wt = dplyr::desc(friend_since))
+      dplyr::top_n(n = n_return, wt = friend_since)
   }else{
     friend_list <- csgo_api_friend(api_key, user_id)
   }
