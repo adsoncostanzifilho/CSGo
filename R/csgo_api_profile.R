@@ -55,6 +55,10 @@ csgo_api_profile <- function(api_key, user_id, name = FALSE)
       user_id
     )
 
+    if(identical(call_cs_profile, character(0)))
+    {
+      return(as.data.frame(NULL))
+    }
 
   }
   else{
