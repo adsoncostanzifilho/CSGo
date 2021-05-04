@@ -46,6 +46,8 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
     user_id <- as.character(user_id)
   }
 
+  # Get Friends IDs
+  friend_list <- csgo_api_friend(api_key, user_id)
 
   # SPLITING THE IDs by 100 (each query allows max 100 user_id)
   f_steamid <- split(friend_list$steamid, ceiling(seq_along(friend_list$steamid)/100))
@@ -61,20 +63,21 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
   )
 
   # Verify public friends
-  f_profile <- f_profile%>%
+  f_profile <- f_profile %>%
     dplyr::mutate(
       public = ifelse(
         as.numeric(communityvisibilitystate) > 1,
         "Public",
         "Not Public"
       )
-    )
+    ) %>%
+    dplyr::left_join(friend_list, by = c("steamid" = "steamid"))
 
   friend_list2 <- f_profile %>%
     dplyr::filter(public == "Public")
 
   # N FRIENDS TO RETURN
-  if(is.numeric(n_return))
+  if(is.numeric(n_return) & nrow(friend_list2) >= n_return)
   {
     friend_list2 <- friend_list2 %>%
       dplyr::top_n(n = n_return, wt = friend_since)
@@ -96,10 +99,10 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
       dplyr::filter(!is.na(value))
 
     return_list$friends_stats <- db_friends_complete
-    return_list$friends <- friend_list
+    return_list$friends <- friend_list2
   }else{
     return_list$friends_stats <- 'NO PUBLIC FRIENDS'
-    return_list$friends <- friend_list
+    return_list$friends <- friend_list2
   }
 
 
