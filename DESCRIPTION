@@ -1,6 +1,6 @@
 Package: CSGo
 Title: Collecting Counter Strike Global Offensive Data
-Version: 0.5.2
+Version: 0.6.5
 Authors@R: 
     c(
         person(
