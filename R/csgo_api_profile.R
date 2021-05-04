@@ -6,13 +6,15 @@
 #'
 #' PS: If you don`t have a API key yet run \code{vignette("auth", package = "CSGo")} and follow the presented steps.
 #'
-#' @param user_id string with the steam user ID.
+#' @param user_id string OR list with the steam user ID.
 #'
 #' Steam ID is the NUMBER OR NAME at the end of your steam profile URL. ex: '76561198263364899'.
 #'
 #' PS: The user should have a public status.
 #'
 #' @param name logical: if the user_id input is a name change it for TRUE. ex: 'kevinarndt'.
+#'
+#' PS: The query by name DOES NOT ALLOW a list of user_id.
 #'
 #' @return data frame with all the CS Go friends of the user ID.
 #' @export
@@ -22,6 +24,8 @@
 #' ## It is necessary to fill the "api_key" parameter to run the example
 #'
 #' df_profile <- csgo_api_profile(api_key = 'XXX', user_id = '76561198263364899')
+#'
+#' df_profile <- csgo_api_profile(api_key = 'XXX', user_id = list('76561198263364899','76561197996007619'))
 #'
 #' df_profile <- csgo_api_profile(api_key = 'XXX', user_id = 'kevinarndt', name = TRUE)
 #' }
@@ -52,7 +56,11 @@ csgo_api_profile <- function(api_key, user_id, name = FALSE)
     )
 
 
-  }else{
+  }
+  else{
+    # Transform the ID into a JSON format to query multiple IDS
+    user_id <- jsonlite::toJSON(user_id)
+
     # Profile by user_id
     call_cs_profile <- sprintf(
       'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?&key=%s&steamids=%s',

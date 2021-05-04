@@ -46,58 +46,42 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
     user_id <- as.character(user_id)
   }
 
-  # GETING THE FRIENDS IDs
-  if(is.numeric(n_return))
-  {
-    friend_list <- csgo_api_friend(api_key, user_id) %>%
-      dplyr::top_n(n = n_return, wt = friend_since)
-  }else{
-    friend_list <- csgo_api_friend(api_key, user_id)
-  }
 
+  # SPLITING THE IDs by 100 (each query allows max 100 user_id)
+  f_steamid <- split(friend_list$steamid, ceiling(seq_along(friend_list$steamid)/100))
 
 
   # VERIFY IF THE USER IS PUBLIC OR NOT
   print("Public friends check..")
 
-  # auxiliary function to create/check if the friend has public data or not
-  check_public <- function(steamid, ...)
-  {
-    df_return <- data.frame(
-      steamid = steamid,
-      personaname = NA,
-      public = NA,
-      profileurl = NA,
-      avatarfull = NA
-    )
+  f_profile <- furrr::future_map2_dfr(
+    .x = api_key,
+    .y = f_steamid,
+    .f = purrr::possibly(csgo_api_profile,"Cant retrieve data")
+  )
 
-    temp <- csgo_api_profile(api_key, steamid)
-
-    if(("communityvisibilitystate" %in% colnames(temp)))
-    {
-      df_return$public <- ifelse(
-        as.numeric(temp$communityvisibilitystate) > 1,
+  # Verify public friends
+  f_profile <- f_profile%>%
+    dplyr::mutate(
+      public = ifelse(
+        as.numeric(communityvisibilitystate) > 1,
         "Public",
         "Not Public"
       )
-      df_return$personaname <- temp$personaname
-      df_return$profileurl <- temp$profileurl
-      df_return$avatarfull <- temp$avatarfull
+    )
 
-    }
-    else{
-      df_return$public <- "Not Public"
-    }
-    return(df_return)
-  }
-
-  friend_list <- furrr::future_map_dfr(.x = friend_list$steamid, .f = check_public)
-
-  friend_list2 <- friend_list %>%
+  friend_list2 <- f_profile %>%
     dplyr::filter(public == "Public")
 
-  # GETING THE STATS OF EACH FRIEND
+  # N FRIENDS TO RETURN
+  if(is.numeric(n_return))
+  {
+    friend_list2 <- friend_list2 %>%
+      dplyr::top_n(n = n_return, wt = friend_since)
+  }
+
   print("Pulling friends stats..")
+
   return_list <- list()
 
   if(nrow(friend_list2) > 0)
@@ -117,6 +101,7 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
     return_list$friends_stats <- 'NO PUBLIC FRIENDS'
     return_list$friends <- friend_list
   }
+
 
   return(return_list)
 
