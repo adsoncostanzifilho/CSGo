@@ -33,7 +33,10 @@ This function will return the CS Go Profile of the user_id (input).
 
 df_profile <- csgo_api_profile(api_key = 'XXX', user_id = '76561198263364899')
 
-df_profile <- csgo_api_profile(api_key = 'XXX', user_id = list('76561198263364899','76561197996007619'))
+df_profile <- csgo_api_profile(
+  api_key = 'XXX',
+  user_id = list('76561198263364899','76561197996007619')
+)
 
 df_profile <- csgo_api_profile(api_key = 'XXX', user_id = 'kevinarndt', name = TRUE)
 }
