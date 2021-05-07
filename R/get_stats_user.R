@@ -49,7 +49,7 @@ get_stats_user <- function(api_key, user_id)
 
   # REMOVE DUPLICATES
   aux <- stats %>%
-    dplyr::filter(type == 'maps', name_match == 'dust2')
+    dplyr::filter(stats$type == 'maps', stats$name_match == 'dust2')
 
   stats <- stats %>%
     dplyr::anti_join(aux, by = c("value"="value")) %>%

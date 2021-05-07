@@ -66,7 +66,7 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
   f_profile <- f_profile %>%
     dplyr::mutate(
       public = ifelse(
-        as.numeric(communityvisibilitystate) > 1,
+        as.numeric(f_profile$communityvisibilitystate) > 1,
         "Public",
         "Not Public"
       )
@@ -80,7 +80,7 @@ get_stats_friends <- function(api_key, user_id, n_return = 'all')
   if(is.numeric(n_return) & nrow(friend_list2) >= n_return)
   {
     friend_list2 <- friend_list2 %>%
-      dplyr::top_n(n = n_return, wt = friend_since)
+      dplyr::top_n(n = n_return, wt = friend_list2$friend_since)
   }
 
   print("Pulling friends stats..")
