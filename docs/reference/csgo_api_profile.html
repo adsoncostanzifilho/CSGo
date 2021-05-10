@@ -81,7 +81,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">CSGo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.7</span>
       </span>
     </div>
 
@@ -174,7 +174,10 @@
 
 <span class='va'>df_profile</span> <span class='op'>&lt;-</span> <span class='fu'>csgo_api_profile</span><span class='op'>(</span>api_key <span class='op'>=</span> <span class='st'>'XXX'</span>, user_id <span class='op'>=</span> <span class='st'>'76561198263364899'</span><span class='op'>)</span>
 
-<span class='va'>df_profile</span> <span class='op'>&lt;-</span> <span class='fu'>csgo_api_profile</span><span class='op'>(</span>api_key <span class='op'>=</span> <span class='st'>'XXX'</span>, user_id <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>'76561198263364899'</span>,<span class='st'>'76561197996007619'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>df_profile</span> <span class='op'>&lt;-</span> <span class='fu'>csgo_api_profile</span><span class='op'>(</span>
+  api_key <span class='op'>=</span> <span class='st'>'XXX'</span>,
+  user_id <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>'76561198263364899'</span>,<span class='st'>'76561197996007619'</span><span class='op'>)</span>
+<span class='op'>)</span>
 
 <span class='va'>df_profile</span> <span class='op'>&lt;-</span> <span class='fu'>csgo_api_profile</span><span class='op'>(</span>api_key <span class='op'>=</span> <span class='st'>'XXX'</span>, user_id <span class='op'>=</span> <span class='st'>'kevinarndt'</span>, name <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='op'>}</span>
